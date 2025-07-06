@@ -12,7 +12,13 @@ const app:Application = express();
 //middleware
 app.use(express.json());
 
-app.use(cors())
+app.use(cors(
+    {
+        origin: 'https://book-frontend-nu.vercel.app',
+       
+        credentials: true
+    }
+))
 app.use(express.urlencoded({ extended: true }));
 
 //router connect
